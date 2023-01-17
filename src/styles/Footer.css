@@ -1,0 +1,33 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem;
+  background-color: var(--color-primary);
+}
+
+.footer__title p {
+  font-size: 1.5rem;
+}
+
+.footer__title p span {
+  font-weight: 700;
+}
+
+.footer__links {
+  font-size: 2rem;
+}
+
+.footer__links i {
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  color: #fff;
+  transform: 0.3s;
+}
+
+.footer__links i:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
