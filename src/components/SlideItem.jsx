@@ -1,3 +1,5 @@
+import "../styles/SlideItem.css";
+
 const SlideItem = ({ comic }) => {
   return (
     <div className="slider__item">

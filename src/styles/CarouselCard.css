@@ -1,0 +1,101 @@
+.carousel__item {
+  width: 20rem;
+  height: 30rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-tertiary);
+  overflow-x: hidden;
+  transition: all 150ms ease-in-out;
+  margin-right: 1rem;
+  flex: none;
+}
+
+.carousel__item::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__item:hover .carousel__content {
+  position: relative;
+  top: -5rem;
+  color: #fff;
+  padding: 1rem;
+  opacity: 1;
+}
+
+.carousel__image {
+  position: relative;
+}
+
+.carousel__image-fade {
+  background-image: linear-gradient(
+    to top,
+    var(--color-tertiary) 30%,
+    transparent
+  );
+  width: 100%;
+  height: 30rem;
+  position: absolute;
+  top: 3rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+  padding: 2rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel__image-fade:hover {
+  top: 0;
+  opacity: 1;
+}
+
+.carousel__image-fade h5 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.carousel__image-fade h3 {
+  margin-bottom: 1rem;
+}
+
+.carousel__image-fade-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel__image-fade-content button {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel__image-fade-content button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.carousel__image-fade-content i {
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.carousel__image-fade-content i:hover {
+  color: var(--color-primary-hover);
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel__item img {
+  width: 100%;
+  height: 30rem;
+  border-radius: 0.5rem;
+}

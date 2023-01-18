@@ -1,0 +1,40 @@
+.carousel__container {
+  width: 100%;
+  height: 35rem;
+  position: relative;
+  margin: 3rem 0;
+}
+
+.carousel__container h2 {
+  margin-bottom: 1rem;
+  padding: 0 5rem;
+}
+
+.carousel__container > i {
+  width: 5rem;
+  height: 30rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.carousel__container > i:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel__wrapper {
+  width: 100%;
+  padding: 0 5rem;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.carousel__wrapper::-webkit-scrollbar {
+  display: none;
+}
