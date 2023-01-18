@@ -3,6 +3,10 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5rem;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 25;
 }
 
 .header__logo {

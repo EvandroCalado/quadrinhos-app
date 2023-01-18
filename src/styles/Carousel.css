@@ -21,6 +21,7 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   z-index: 20;
+  color: #000;
 }
 
 .carousel__container > i:hover {

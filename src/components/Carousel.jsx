@@ -2,7 +2,7 @@ import CarouselCard from "./CarouselCard";
 import { useRef } from "react";
 import "../styles/Carousel.css";
 
-const Carousel = ({ comics, title }) => {
+const Carousel = ({ handleInfoClick, comics, title }) => {
   const carouselRef = useRef(null);
 
   const handleLeftClick = () => {
@@ -27,7 +27,7 @@ const Carousel = ({ comics, title }) => {
       <div className="carousel__wrapper" ref={carouselRef}>
         {comics?.map(
           (comic) =>
-            comic.images[0] && <CarouselCard key={comic.id} comic={comic} />
+            comic.images[0] && <CarouselCard handleInfoClick={handleInfoClick} key={comic.id} comic={comic} />
         )}
       </div>
     </div>
