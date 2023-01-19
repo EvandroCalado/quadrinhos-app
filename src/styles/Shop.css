@@ -1,0 +1,44 @@
+.shop__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+.shop__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop__head input {
+  width: 100%;
+  max-width: 60rem;
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  outline: none;
+}
+
+.shop__shop__head-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.shop__shop__head-pagination i {
+  font-size: 4rem;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.shop__shop__head-pagination i:hover {
+  color: #000;
+}
+
+.shop__shop__head-pagination p {
+  font-size: 2.5rem;
+}

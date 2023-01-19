@@ -1,9 +1,7 @@
-const Details = ({comic}) => {
+const Details = ({ comic }) => {
   return (
     <div className="details">
-      <p>
-        {comic?.description}
-      </p>
+      <p>{comic?.description}</p>
       <p>
         <b>Volume:</b> {comic?.issueNumber}
       </p>

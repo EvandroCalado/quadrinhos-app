@@ -17,11 +17,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
-  transition: all 0.3s ease-in-out;
+  font-size: 6rem;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   z-index: 20;
-  color: #000;
+  color: var(--color-primary);
+  text-shadow: 1px 1px 1px #000;
 }
 
 .carousel__container > i:hover {

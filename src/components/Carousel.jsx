@@ -27,7 +27,13 @@ const Carousel = ({ handleInfoClick, comics, title }) => {
       <div className="carousel__wrapper" ref={carouselRef}>
         {comics?.map(
           (comic) =>
-            comic.images[0] && <CarouselCard handleInfoClick={handleInfoClick} key={comic.id} comic={comic} />
+            comic.images[0] && (
+              <CarouselCard
+                handleInfoClick={handleInfoClick}
+                key={comic.id}
+                comic={comic}
+              />
+            )
         )}
       </div>
     </div>
