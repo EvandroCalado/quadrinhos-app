@@ -6,10 +6,10 @@ import Slider from "../components/Slider";
 import "../styles/Home.css";
 
 const Home = () => {
-  const [topRated, setTopRated] = useState();
-  const [news, setNews] = useState();
-  const [marvel, setMarvel] = useState();
-  const [comic, setComic] = useState();
+  const [topRated, setTopRated] = useState([]);
+  const [news, setNews] = useState([]);
+  const [marvel, setMarvel] = useState([]);
+  const [comic, setComic] = useState([]);
   const [isDetails, setIsDetails] = useState(true);
   const modalRef = useRef(null);
 

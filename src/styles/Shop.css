@@ -7,25 +7,65 @@
   padding: 3rem 0;
 }
 
-.shop__head {
+.shop__input-contaier {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.shop__head input {
+.shop__form {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 60rem;
   font-size: 1.5rem;
   padding: .5rem 1rem;
+  border-radius: .5rem;
+  border: 1px solid var(--color-tertiary);
+  margin-bottom: 2rem;
+}
+
+.shop__form input {
+  display: flex;
+  flex: 1;
+  font-size: 1.5rem;
+  padding: .5rem 0;
   outline: none;
+  border: none;
+}
+
+.shop__form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border: none;
+  outline: #fff;
+  background-color: #fff;
+}
+
+.shop__input-contaier > button {
+  font-size: 1.5rem;
+  padding: 1.1rem 3rem;
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+  border: none;
+  border-radius: .5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.shop__input-contaier > button:hover {
+  background-color: var(--color-primary-hover);
 }
 
 .shop__shop__head-pagination {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
