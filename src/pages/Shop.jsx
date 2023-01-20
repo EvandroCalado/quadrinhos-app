@@ -5,7 +5,7 @@ import Modal from "../components/Modal";
 import "../styles/Shop.css";
 
 let currentPage = 1;
-let itemsPerPage = 25;
+let itemsPerPage = 20;
 
 const Shop = () => {
   const [comics, setComics] = useState([]);
@@ -16,14 +16,11 @@ const Shop = () => {
   const [isDetails, setIsDetails] = useState(true);
   const modalRef = useRef(null);
 
-  console.log(page);
-  console.log(comicPerPage);
-
-  // useEffect(() => {
-  //   getItems(links.comics, page, comicPerPage).then((response) => {
-  //     setComics(response?.data?.results);
-  //   });
-  // }, []);
+  useEffect(() => {
+    getItems(links.comics, page, comicPerPage).then((response) => {
+      setComics(response?.data?.results);
+    });
+  }, [page, comicPerPage]);
 
   const hadleFooterClick = (direction) => {
     console.log(direction);
@@ -59,19 +56,26 @@ const Shop = () => {
       setComics(response?.data?.results);
     });
     setSearch("");
+    setPage(1);
   };
 
   const handlePaginationClick = (direction) => {
     if (direction === "left") {
-      const page = (currentPage = currentPage - 1);
-      setPage(page);
+      if (page <= 1) {
+        return;
+      }
+      const previousPage = (currentPage = currentPage - 1);
+      setPage(previousPage);
 
       setComicPerPage(itemsPerPage * currentPage);
     }
 
     if (direction === "right") {
-      const page = (currentPage = currentPage + 1);
-      setPage(page);
+      if (page >= 5) {
+        return;
+      }
+      const nextPage = (currentPage = currentPage + 1);
+      setPage(nextPage);
 
       setComicPerPage(itemsPerPage * currentPage);
     }
@@ -109,7 +113,7 @@ const Shop = () => {
             onClick={() => handlePaginationClick("left")}
             className="ri-arrow-left-s-line"
           ></i>
-          <p>1</p>
+          <p>{page} de 5</p>
           <i
             onClick={() => handlePaginationClick("right")}
             className="ri-arrow-right-s-line"

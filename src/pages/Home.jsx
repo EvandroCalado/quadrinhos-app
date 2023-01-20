@@ -40,6 +40,7 @@ const Home = () => {
 
   const handleCloseClick = () => {
     modalRef.current.style.display = "none";
+    setIsDetails(true);
   };
 
   const handleInfoClick = (comic) => {

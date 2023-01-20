@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 import "../styles/Header.css";
 
 const nav__links = [
@@ -13,6 +14,8 @@ const nav__links = [
 ];
 
 const Header = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
   return (
     <header>
       <div className="header__logo">
@@ -42,8 +45,10 @@ const Header = () => {
       </div>
       <div className="nav__icons">
         <div className="cart">
-          <i className="ri-shopping-basket-line"></i>
-          <span>2</span>
+          <Link to="/cart">
+            <i className="ri-shopping-basket-line"></i>
+          </Link>
+          {cartItems.length === 0 ? "" : <span>{cartItems.length}</span>}
         </div>
         <div className="profile">
           <i className="ri-user-line"></i>

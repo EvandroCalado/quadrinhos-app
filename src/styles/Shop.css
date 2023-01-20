@@ -21,17 +21,17 @@
   justify-content: center;
   max-width: 60rem;
   font-size: 1.5rem;
-  padding: .5rem 1rem;
-  border-radius: .5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--color-tertiary);
-  margin-bottom: 2rem;
+  margin-right: 1rem;
 }
 
 .shop__form input {
   display: flex;
   flex: 1;
   font-size: 1.5rem;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   outline: none;
   border: none;
 }
@@ -52,10 +52,10 @@
   background-color: var(--color-primary);
   color: var(--color-tertiary);
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .shop__input-contaier > button:hover {
@@ -67,11 +67,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .shop__shop__head-pagination i {
   font-size: 4rem;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -81,4 +82,10 @@
 
 .shop__shop__head-pagination p {
   font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 425px) {
+  .shop__input-contaier > button {
+    padding: 1rem 2rem;
+  }
 }

@@ -40,3 +40,24 @@
 .slider__item img {
   height: 35rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .slider__item h1 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .slider__item h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .slider__item h2 {
+    font-size: 1.5rem;
+  }
+
+  .slider__image img {
+    height: 25rem;
+  }
+}

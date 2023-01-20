@@ -1,5 +1,10 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getZipcode } from "../api/api";
 import Details from "../components/Details";
 import Info from "../components/Info";
+import { cartActions } from "../redux/cartSlice";
+import {toast} from "react-toastify"
 import "../styles/Modal.css";
 
 const Modal = ({
@@ -9,6 +14,36 @@ const Modal = ({
   isDetails,
   modalRef,
 }) => {
+  const [zipcode, setZipcode] = useState("");
+  const [adress, setAdress] = useState("");
+  const [shippingValue, setShippingValue] = useState("");
+
+  const dispatch = useDispatch();
+
+  const comicImage = `${comic?.images?.[0]?.path}.${comic?.images?.[0]?.extension}`;
+  const comicPrice = comic?.prices?.[0]?.price;
+
+  const handleAddToCart = () => {
+    dispatch(
+      cartActions.addItem({
+        id: comic.id,
+        image: comicImage,
+        title: comic.title,
+        price: comicPrice,
+      })
+    );
+    toast.success("Adicionado ao carrinho !")
+  };
+
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+
+    getZipcode(zipcode).then((response) => {
+      setAdress(response.results[0].formatted_address);
+      setShippingValue(30);
+    });
+  };
+
   return (
     <div className="modal__container" ref={modalRef}>
       <div className="modal">
@@ -28,7 +63,7 @@ const Modal = ({
               <span>8</span> itens
             </p>
 
-            <button>
+            <button onClick={(e) => handleAddToCart(e)}>
               <i className="ri-shopping-cart-line"></i>Adicionar
             </button>
 
@@ -37,11 +72,24 @@ const Modal = ({
                 <i className="ri-truck-line"></i>
                 <h3>Calcule o frete</h3>
               </div>
-              <div className="modal__shipping-input">
-                <input type="text" placeholder="Apenas números" />
-                <button>Calcular</button>
+              <form
+                onSubmit={handleSubmitClick}
+                className="modal__shipping-input"
+              >
+                <input
+                  onChange={(e) => setZipcode(e.target.value)}
+                  value={zipcode}
+                  type="text"
+                  placeholder="Digite seu cep"
+                />
+                <button type="submit">Calcular</button>
+              </form>
+              <div className="modal__adress">
+                <span>{adress}</span>
+                {shippingValue && (
+                  <span>Valor do frete: R${shippingValue.toFixed(2)}</span>
+                )}
               </div>
-              <span>correios R$44,26</span>
             </div>
           </div>
         </div>

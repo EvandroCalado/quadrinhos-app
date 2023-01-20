@@ -121,6 +121,11 @@
   margin: 0.5rem 0;
 }
 
+.modal__adress {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal__footer-title {
   display: flex;
   gap: 2rem;

@@ -67,6 +67,10 @@ header {
   cursor: pointer;
 }
 
+.nav__icons .cart a {
+  color: var(--color-tertiary);
+}
+
 .cart {
   position: relative;
 }
@@ -87,4 +91,10 @@ header {
 
 .mobile__menu {
   display: none;
+}
+
+@media only screen and (max-width: 425px) {
+  .header__logo-title {
+    display: none;
+  }
 }
